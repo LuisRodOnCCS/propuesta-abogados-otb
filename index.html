@@ -16,6 +16,28 @@
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
 
+  <!-- Sprite de iconos -->
+  <svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <symbol id="icono-whatsapp" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.045 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.892c0 2.096.548 4.142 1.588 5.945L0 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.585 0 11.946-5.336 11.949-11.896a11.9 11.9 0 0 0-3.421-8.387"/>
+    </symbol>
+  </svg>
+
+  <!-- ============ BARRA SUPERIOR (acceso rápido a WhatsApp) ============ -->
+  <div class="barra-superior">
+    <div class="contenedor barra-superior__inner">
+      <p class="barra-superior__texto">
+        El costo y el plazo de tu trámite, por escrito antes de empezar.
+      </p>
+      <a class="barra-superior__wa" data-wa data-wa-lugar="barra-superior"
+         href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20tr%C3%A1mite%20en%20M%C3%A9xico.%20%C2%BFMe%20pueden%20ayudar%3F"
+         target="_blank" rel="noopener">
+        <svg class="icono-wa" aria-hidden="true"><use href="#icono-whatsapp"/></svg>
+        Escríbenos por WhatsApp
+      </a>
+    </div>
+  </div>
+
   <header class="cabecera">
     <div class="contenedor cabecera__inner">
       <a class="marca" href="#inicio">
@@ -35,7 +57,7 @@
           <li><a href="#preguntas">Preguntas</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
-        <a class="boton boton--solido boton--chico" href="#contacto">Agendar una consulta</a>
+        <a class="boton boton--linea boton--chico" href="#contacto">Agendar una consulta</a>
       </nav>
     </div>
   </header>
@@ -60,11 +82,15 @@
           </p>
 
           <div class="portada__acciones">
-            <a class="boton boton--solido" href="#contacto">Agendar una consulta</a>
-            <a class="boton boton--linea" href="#tramites">Ver trámites</a>
+            <a class="cta-wa" data-wa data-wa-lugar="hero"
+               href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20tr%C3%A1mite%20en%20M%C3%A9xico.%20%C2%BFMe%20pueden%20ayudar%3F"
+               target="_blank" rel="noopener">
+              <svg class="icono-wa" aria-hidden="true"><use href="#icono-whatsapp"/></svg>
+              Escríbenos por WhatsApp
+            </a>
+            <a class="boton boton--linea" href="#contacto">Agendar una consulta</a>
           </div>
 
-          <!-- PENDIENTE: validar la promesa de tiempo de respuesta con el despacho -->
           <p class="portada__nota">
             Un abogado revisa tu caso y te responde. No un formulario automático.
           </p>
@@ -137,7 +163,15 @@
                     El trámite de autenticación que casi nadie sabe pedir bien.
                   </p>
                 </div>
-                <p class="tramite__plazo">3 a 5 semanas</p>
+                <div class="tramite__meta">
+                  <p class="tramite__plazo">3 a 5 semanas</p>
+                  <a class="cta-wa cta-wa--chica" data-wa data-wa-lugar="tramite-apostille"
+                     href="https://wa.me/5210000000000?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20Apostille%20y%20legalizaci%C3%B3n.%20%C2%BFMe%20pueden%20ayudar%3F"
+                     target="_blank" rel="noopener">
+                    <svg class="icono-wa" aria-hidden="true"><use href="#icono-whatsapp"/></svg>
+                    Escríbenos
+                  </a>
+                </div>
               </li>
 
               <li class="tramite">
@@ -148,7 +182,15 @@
                     donde naciste. Muchas actas se resuelven por correo.
                   </p>
                 </div>
-                <p class="tramite__plazo">2 a 4 semanas</p>
+                <div class="tramite__meta">
+                  <p class="tramite__plazo">2 a 4 semanas</p>
+                  <a class="cta-wa cta-wa--chica" data-wa data-wa-lugar="tramite-actas"
+                     href="https://wa.me/5210000000000?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20Actas%20de%20nacimiento%2C%20matrimonio%20y%20defunci%C3%B3n.%20%C2%BFMe%20pueden%20ayudar%3F"
+                     target="_blank" rel="noopener">
+                    <svg class="icono-wa" aria-hidden="true"><use href="#icono-whatsapp"/></svg>
+                    Escríbenos
+                  </a>
+                </div>
               </li>
 
               <li class="tramite">
@@ -156,10 +198,18 @@
                   <h3 class="tramite__titulo">CURP y constancias</h3>
                   <p class="tramite__desc">
                     Tus datos de identificación oficial, sin salir de tu casa.
-                    Es el trámite más rápido de todos y el que más se postpone.
+                    Es el trámite más rápido de todos y el que más se pospone.
                   </p>
                 </div>
-                <p class="tramite__plazo">1 a 2 días</p>
+                <div class="tramite__meta">
+                  <p class="tramite__plazo">1 a 2 días</p>
+                  <a class="cta-wa cta-wa--chica" data-wa data-wa-lugar="tramite-curp"
+                     href="https://wa.me/5210000000000?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20CURP%20y%20constancias.%20%C2%BFMe%20pueden%20ayudar%3F"
+                     target="_blank" rel="noopener">
+                    <svg class="icono-wa" aria-hidden="true"><use href="#icono-whatsapp"/></svg>
+                    Escríbenos
+                  </a>
+                </div>
               </li>
 
               <li class="tramite">
@@ -170,7 +220,15 @@
                     notario en la ciudad que corresponde a tu expediente.
                   </p>
                 </div>
-                <p class="tramite__plazo">3 a 6 semanas</p>
+                <div class="tramite__meta">
+                  <p class="tramite__plazo">3 a 6 semanas</p>
+                  <a class="cta-wa cta-wa--chica" data-wa data-wa-lugar="tramite-fe-publica"
+                     href="https://wa.me/5210000000000?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20Fe%20p%C3%BAblica%20y%20juramentaci%C3%B3n.%20%C2%BFMe%20pueden%20ayudar%3F"
+                     target="_blank" rel="noopener">
+                    <svg class="icono-wa" aria-hidden="true"><use href="#icono-whatsapp"/></svg>
+                    Escríbenos
+                  </a>
+                </div>
               </li>
 
               <li class="tramite">
@@ -181,7 +239,15 @@
                     municipales. Los que dependen del estado y del municipio.
                   </p>
                 </div>
-                <p class="tramite__plazo">4 a 8 semanas</p>
+                <div class="tramite__meta">
+                  <p class="tramite__plazo">4 a 8 semanas</p>
+                  <a class="cta-wa cta-wa--chica" data-wa data-wa-lugar="tramite-permisos"
+                     href="https://wa.me/5210000000000?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20Permisos%20y%20licencias.%20%C2%BFMe%20pueden%20ayudar%3F"
+                     target="_blank" rel="noopener">
+                    <svg class="icono-wa" aria-hidden="true"><use href="#icono-whatsapp"/></svg>
+                    Escríbenos
+                  </a>
+                </div>
               </li>
 
               <li class="tramite">
@@ -192,7 +258,15 @@
                     México y tú no puedes estar ahí.
                   </p>
                 </div>
-                <p class="tramite__plazo">2 a 3 semanas</p>
+                <div class="tramite__meta">
+                  <p class="tramite__plazo">2 a 3 semanas</p>
+                  <a class="cta-wa cta-wa--chica" data-wa data-wa-lugar="tramite-consulados"
+                     href="https://wa.me/5210000000000?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20Representaci%C3%B3n%20ante%20consulados.%20%C2%BFMe%20pueden%20ayudar%3F"
+                     target="_blank" rel="noopener">
+                    <svg class="icono-wa" aria-hidden="true"><use href="#icono-whatsapp"/></svg>
+                    Escríbenos
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
@@ -342,6 +416,20 @@
             </div>
           </details>
         </div>
+
+        <!-- Cierre del FAQ: punto de conversión -->
+        <div class="cierre-wa">
+          <p class="cierre-wa__texto">
+            ¿No encuentras tu caso? Cuéntanos qué necesitas y te decimos si podemos
+            ayudarte.
+          </p>
+          <a class="cta-wa" data-wa data-wa-lugar="faq"
+             href="https://wa.me/5210000000000?text=Hola%2C%20tengo%20una%20duda%20sobre%20un%20tr%C3%A1mite%20en%20M%C3%A9xico.%20%C2%BFMe%20pueden%20ayudar%3F"
+             target="_blank" rel="noopener">
+            <svg class="icono-wa" aria-hidden="true"><use href="#icono-whatsapp"/></svg>
+            Escríbenos por WhatsApp
+          </a>
+        </div>
       </div>
     </section>
 
@@ -351,6 +439,25 @@
         <h2 class="titulo-seccion" id="contacto-titulo">Hablemos de tu caso</h2>
 
         <div class="contacto">
+
+          <div class="contacto__principal">
+            <p class="contacto__intro">
+              La vía más rápida es WhatsApp: nos escribes con lo que tienes a la
+              mano y te respondemos con los pasos y el costo. Si prefieres dejarlo
+              por escrito, usa el formulario.
+            </p>
+            <div class="contacto__principal-acciones">
+              <a class="cta-wa" data-wa data-wa-lugar="contacto"
+                 href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20agendar%20una%20consulta%20sobre%20un%20tr%C3%A1mite%20en%20M%C3%A9xico.%20%C2%BFMe%20pueden%20ayudar%3F"
+                 target="_blank" rel="noopener">
+                <svg class="icono-wa" aria-hidden="true"><use href="#icono-whatsapp"/></svg>
+                Escríbenos por WhatsApp
+              </a>
+              <p class="contacto__numero">
+                [WhatsApp por confirmar]
+              </p>
+            </div>
+          </div>
 
           <form class="formulario" id="form-consulta" novalidate>
             <div class="campo">
@@ -471,6 +578,24 @@
       </nav>
     </div>
   </footer>
+
+  <!-- ============ BOTÓN FLOTANTE (desktop) ============ -->
+  <a class="wa-flotante" data-wa data-wa-lugar="flotante"
+     href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20tr%C3%A1mite%20en%20M%C3%A9xico.%20%C2%BFMe%20pueden%20ayudar%3F"
+     target="_blank" rel="noopener" hidden>
+    <svg class="icono-wa" aria-hidden="true"><use href="#icono-whatsapp"/></svg>
+    <span class="wa-flotante__texto">Escríbenos</span>
+  </a>
+
+  <!-- ============ BARRA FIJA (móvil) ============ -->
+  <div class="barra-wa" hidden>
+    <a class="cta-wa cta-wa--ancho" data-wa data-wa-lugar="barra-movil"
+       href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20tr%C3%A1mite%20en%20M%C3%A9xico.%20%C2%BFMe%20pueden%20ayudar%3F"
+       target="_blank" rel="noopener">
+      <svg class="icono-wa" aria-hidden="true"><use href="#icono-whatsapp"/></svg>
+      Escríbenos por WhatsApp
+    </a>
+  </div>
 
   <script src="assets/js/main.js"></script>
 </body>

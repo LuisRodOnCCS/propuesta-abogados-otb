@@ -79,7 +79,7 @@ que la IA produce por defecto.
 |---|---|---|
 | `papel` | `#EDEFEA` | Fondo base. Papel frío (no crema cálido) — evita el look "paper" genérico. |
 | `tinta` | `#16302A` | Texto principal, secciones oscuras, tinta del sello. Verde-negro, no negro templatizado. |
-| `jade` | `#0E7A5F` | Acento primario: CTA, enlaces, focus, subrayados de emphasis. |
+| `jade` | `#0E7A5F` | Acento primario: foco, subrayados, chips de plazo. **No** se usa como botón: el verde de botón es `wa`. |
 | `salvia` | `#D8E5DD` | Superficies tintadas: panel de ficha, filas alternas, bloques de proceso. |
 | `cacao` | `#5A3B2E` | Acento cálido secundario: tinta del sello, marcadores de sección. Tierra, no terracota. |
 | `humo` | `#5A6B66` | Texto secundario, metadatos, meta descripciones. |
@@ -87,11 +87,13 @@ que la IA produce por defecto.
 Derivados permitidos (nada fuera de esta lista):
 
 ```
---papel-alto   #F8F9F6   superficie elevada (formularios, campos, bloques)
---jade-oscuro  #0A6B53   texto jade sobre papel  (contraste 5.6:1)
---linea        #C6CFC8   filetes y divisores
---tinta-70     rgba(22,48,42,.70)
---papel-90     rgba(237,239,234,.90)
+--papel-alto     #F8F9F6   superficie elevada (formularios, campos, bloques)
+--tinta-oscuro   #0E241F   hover del botón sólido (tinta)
+--jade-oscuro    #0A6B53   texto jade sobre papel  (contraste 5.6:1)
+--linea          #C6CFC8   filetes y divisores
+--error          #8E2B1E   mensajes de error del formulario (7.9:1 sobre papel-alto)
+--tinta-70       rgba(22,48,42,.70)
+--papel-90       rgba(237,239,234,.90)
 ```
 
 **Contrastes ya verificados:** `tinta`/`papel` ≈ 12:1 · `jade`/`papel-alto` ≈ 5.3:1 ·
@@ -107,6 +109,43 @@ blanco sobre `jade` ≈ 5.3:1 · `papel` sobre `tinta` ≈ 12:1.
   `papel` vs `papel-alto` o un borde de 1px, no un `linear-gradient`.
 - Nunca hay sombra difusa `rgba(0,0,0,.1)` bajo tarjetas. Si algo flota, se usa un
   borde de 1px `linea` o una banda `tinta` de 4px.
+
+### El verde de WhatsApp: un color de canal, no un color de marca
+
+El sitio tiene un CTA de formulario (jade) y un CTA de WhatsApp. Son dos canales
+distintos y el usuario tiene que distinguirlos de un vistazo. Por eso WhatsApp
+**no** usa jade, sino su propio verde:
+
+| Token | Hex | Rol |
+|---|---|---|
+| `wa` | `#25D366` | Relleno de los botones de WhatsApp. Es el color que la gente reconoce. |
+| `wa-borde` | `#128C7E` | Filete de 1px del botón: define el borde contra `papel`. |
+| `wa-texto` | `#0E2A22` | Texto y glifo sobre `wa`. |
+| `wa-hover` | `#1FBE5A` | Estado hover. |
+
+**Contrastes verificados:**
+
+| Par | Ratio | Nota |
+|---|---|---|
+| `wa-texto` sobre `wa` | 7.6:1 | AA para texto normal ✓ |
+| `wa-borde` sobre `papel` | 3.6:1 | ≥3:1 para el borde del control (WCAG 1.4.11) ✓ |
+| `wa` sobre `papel` | 1.4:1 | **No alcanza por sí solo** → por eso el botón lleva filete `wa-borde` |
+
+**Por qué un color de marca en vez de jade:** el verde `#25D366` es un *señalizador de
+canal*. La gente lo reconoce antes de leer el texto, y en una página cuyo trabajo es
+conseguir un clic, eso vale más que la pureza de la paleta. Es una decisión de
+funnel, no de decoración.
+
+**Reglas duras**
+
+- `wa` **solo** aparece en: CTA principal del hero, CTA contextual de cada trámite,
+  bloque de cierre del FAQ, canal del formulario de contacto, botón flotante y barra
+  fija móvil. En ningún otro lado. Si se repite en muchos sitios, deja de señalar.
+- Nunca hay dos botones verdes juntos en la misma pantalla. El verde de botón es
+  **solo** `wa`: el formulario usa `tinta`, y `jade` queda como acento (foco, chips,
+  subrayados). Si aparece un segundo verde de botón, se rompe la señal.
+- El glifo de WhatsApp siempre acompaña al color. El color solo no se usa.
+- El sello (cacao) y `wa` no se mezclan en el mismo bloque.
 
 ---
 
@@ -180,14 +219,16 @@ información**, no decora: por eso se llama "ficha".
 │ Bufete Rodea   Trámites   Cómo funciona   Preguntas   Contacto     │
 │                                                     [Agendar consulta]│
 ├──────────────────────────────────────────────────────────────────────┤
+│ El costo y el plazo de tu trámite, por escrito.  [Escríbenos por WA]  │ ← barra superior
+├──────────────────────────────────────────────────────────────────────┤
 │                                                                      │
 │   Regulariza tu situación en México        ← titular a ancho completo│
-│   desde Estados Unidos.                     (display 60px, 2 líneas)  │
+│   desde Estados Unidos.                     (display 56px, 2 líneas)  │
 │                                                                      │
 │   Un solo despacho lleva tu expediente      ╭─────────────╮          │
 │   de ambos lados de la frontera.            │   S E L L O  │          │
-│                                              │  (tinta, -6°)│          │
-│   [Agendar una consulta]   [Ver trámites]    ╰─────────────╯          │
+│                                              │  (cacao, -6°)│          │
+│   [Escríbenos por WhatsApp] [Agendar…]      ╰─────────────╯          │
 │   Un abogado revisa tu caso y te responde.                           │
 │                                                                      │
 ├────────────────────────────────┬─────────────────────────────────────┤
@@ -197,10 +238,10 @@ información**, no decora: por eso se llama "ficha".
 │ Jurisdicción:                 │  CURP y constancias                  │
 │   México, cualquier estado    │  Fe pública y juramentación         │
 │ Plazo típico:                  │  Permisos y licencias                │
-│   3 a 5 semanas                │  Representation before consulates    │
+│   3 a 5 semanas                │  Representación ante consulados      │
 │ Documentos:                    │                                     │
-│   Pasaporte, acta original     │  ────────────────────────────────    │
-│                                │  Cada fila lleva su ficha real      │
+│   Pasaporte, acta original     │  cada fila: plazo + [Escríbenos]     │
+│                                │  (WhatsApp con el trámite ya escrito)│
 ├────────────────────────────────┴─────────────────────────────────────┤
 │  Cómo funciona                                                     │
 │  1  Nos escribes y revisamos tu caso      ← sí es secuencia:        │
@@ -210,9 +251,16 @@ información**, no decora: por eso se llama "ficha".
 │  Testimonios — 2 citas grandes en Newsreader, sin avatar, sin rating  │
 ├──────────────────────────────────────────────────────────────────────┤
 │  Preguntas frecuentes — acordeón <details> nativo                     │
+│  ────────────────────────────────────────────────────────────────     │
+│  ¿No encuentras tu caso?  [Escríbenos por WhatsApp]                  │
 ├──────────────────────────────────────────────────────────────────────┤
-│  Contacto: formulario a la izquierda, datos y oficinas a la derecha  │
+│  Contacto: banda de WhatsApp arriba, formulario a la izquierda,      │
+│            datos y oficinas a la derecha                              │
 │  Pie: aviso legal, aviso de privacidad, Collective bar                 │
+│                                                                      │
+│  ⟨escritorio⟩ botón flotante de WhatsApp abajo a la derecha,         │
+│              aparece cuando el hero sale de pantalla.                │
+│  ⟨móvil⟩ barra fija de WhatsApp abajo, ancho completo.               │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -248,6 +296,36 @@ información**, no decora: por eso se llama "ficha".
 - Responsive: el riel de ficha **colapsa arriba** del contenido en < 900px; la
   lista de trámites pasa de 2 columnas a 1; el sello baja de 420px a 260px de ancho.
 - Mobile: todo se lee bien a 360px. Botones a ancho completo en < 480px.
+
+### Los puntos de conversión
+
+La página es un embudo: el objetivo es que la persona **escriba por WhatsApp**, no
+que llene un formulario. El formulario se queda (hay quien prefiere eso), pero es el
+camino secundario.
+
+| # | Punto | Dónde | Qué hace |
+|---|---|---|---|
+| 1 | Barra superior | antes del header, no sticky | Promesa + acceso directo a WhatsApp. Desaparece al hacer scroll. |
+| 2 | CTA principal | hero | "Escríbenos por WhatsApp" (verde `wa`). Único botón de ese color en pantalla. |
+| 3 | CTA contextual | cada fila de trámites | WhatsApp con **mensaje precargado de ese trámite**. Es el punto de mayor intención de toda la página. |
+| 4 | Cierre del FAQ | fin de la sección | "Si no encuentras tu caso" → WhatsApp. |
+| 5 | Canal en contacto | sección de contacto | WhatsApp como vía recomendada, con el número a la vista. |
+| 6 | Botón flotante | esquina inferior derecha, ≥ 901px | Aparece cuando el hero ya salió de pantalla. |
+| 7 | Barra fija móvil | fondo, ≤ 900px | CTA de ancho completo. **Nunca** junto al botón flotante. |
+
+**Reglas del embudo**
+
+- En todo momento hay **un solo** CTA de WhatsApp persistente (la barra móvil o el
+  flotante). Los demás son contextuales y están en el flujo.
+- El CTA principal y el secundario nunca se parecen: uno es verde `wa` con glifo, el
+  otro es `jade` o de línea.
+- El mensaje precargado cambia según el punto de entrada: en un trámite de
+  "Permisos y licencias" el mensaje dice eso, no "hola". Quien escribe desde ahí ya
+  dijo qué necesita.
+- La barra fija móvil nunca tapa contenido: el `body` recibe `padding-bottom` cuando
+  está visible, y desaparece cuando la sección de contacto ya está en pantalla (ahí el
+  usuario ya tiene el formulario delante). El contacto se mide al 40% del alto de la
+  ventana: mientras el usuario sigue leyendo el FAQ, el CTA sigue disponible.
 
 ---
 
@@ -288,6 +366,12 @@ Antes de dar por buena cualquier pantalla, verificar:
 - [ ] ¿Hay bandera, papel picado, calaveras, cactus, marigold, tequila? → fuera.
 - [ ] ¿Los número `01/02/03` corresponden a algo que **realmente** es una secuencia? Si
       no, son decoración → fuera.
+- [ ] ¿Hay dos botones verdes juntos en pantalla? (jade y `wa` adyacentes) → fuera.
+- [ ] ¿El verde `wa` aparece en algún componente que no sea de WhatsApp? → fuera.
+- [ ] ¿La barra fija móvil tapa contenido, o coexiste con el botón flotante? → fuera.
+- [ ] ¿El CTA de WhatsApp y el botón de formulario se parecen demasiado? → fuera.
+- [ ] ¿El mensaje precargado de un trámite no menciona ese trámite? → fuera.
+- [ ] ¿El botón flotante aparece antes de que el usuario salga del hero? → fuera.
 
 ---
 
@@ -311,9 +395,38 @@ Antes de dar por buena cualquier pantalla, verificar:
 - **Límite de Claims:** nada de "garantizado", "100% aprobado", "resultados
   inmediatos", "los mejores abogados". Se habla de proceso, tiempos y cobertura.
 
+### El copy de WhatsApp
+
+- **El verbo nunca cambia:** la acción se llama **"Escríbenos"** en todos los puntos.
+  "Escríbenos por WhatsApp" es la versión completa del CTA principal; "Escríbenos" es
+  la corta de la fila de trámites. Mismo verbo, mismo canal, en toda la página.
+- **El botón de formulario nunca dice "Enviar".** Dice "Agendar una consulta" y su
+  confirmación es "Consulta agendada". El canal de WhatsApp no tiene confirmación:
+  la conversación *es* la confirmación.
+- **El mensaje precargado es corto y ya dice para qué se escribe.** No es un formulario
+  en el chat: es una frase que la persona puede enviar sin editar, o editar en cinco
+  segundos. Estructura fija:
+
+  ```
+  Hola, necesito información sobre {trámite}. ¿Me pueden ayudar?
+  ```
+
+  - General (hero, barra superior, flotante, barra móvil): `Hola, quiero información
+    sobre un trámite en México. ¿Me pueden ayudar?`
+  - FAQ: `Hola, tengo una duda sobre un trámite en México. ¿Me pueden ayudar?`
+  - Contacto: `Hola, quiero agendar una consulta sobre un trámite en México.`
+
+- **El texto visible nunca promete lo que WhatsApp no puede cumplir.** Nada de
+  "respuesta inmediata" si no la hay. El mensaje precargado no dice "escríbenos ya".
+
 ### Placeholders que el despacho debe sustituir antes de publicar
 
 - `[NOMBRE_DEL_DESPACHO]` — el nombre real y su marca.
+- **Número de WhatsApp**: `assets/js/main.js` → `WHATSAPP_NUMERO`. Formato:
+  clave de país + número, sin `+`, sin espacios, sin guiones (ej. `5218123456789`).
+  Es el único lugar que hay que editar: el JS reescribe los 12 enlaces de la página.
+  Los `href` del HTML traen `5210000000000` como valor de reserva para que los
+  enlaces funcionen aunque el JS no cargue; el JS siempre tiene la última palabra.
 - Testimonios: hoy son **copy de ejemplo**, no reseñas reales. No publicar testimonios
   inventados. Marcar cada bloque con `<!-- TESTIMONIO PENDIENTE -->` hasta que el
   despacho entregue textos firmados y con autorización de uso.
@@ -344,6 +457,17 @@ animados, cursor personalizado, confeti. Nada de animation on load salvo el sell
 `@media (prefers-reduced-motion: reduce)` → todo a 0.01ms, sin transformaciones,
 el sello aparece ya estamado.
 
+### Movimiento de los elementos de conversión
+
+| Elemento | Comportamiento |
+|---|---|
+| Botón flotante (desktop) | Aparece con un fundido de 200ms **sin desplazamiento**, cuando el hero sale de pantalla. Sin "slide up". |
+| Barra fija móvil | Entra y sale sin animación (cambio de estado directo). Es una barra, no una animación. |
+| Hover de CTA de WhatsApp | El relleno se oscurece ligeramente, 160ms. |
+| Glifo de WhatsApp | **Sin** latido, rebote ni pulso. Un icono que se mueve llama la atención de forma irritante y además compite con el sello. |
+
+El único movimiento con carácter en toda la página sigue siendo **el sello**.
+
 ---
 
 ## 10. Suelo técnico (calidad mínima, sin anunciarlo)
@@ -356,6 +480,9 @@ el sello aparece ya estamado.
 - Formularios: `<label>` real, `autocomplete`, mensajes de error con `aria-live="polite"`,
   `aria-invalid` y `aria-describedby`.
 - Contraste ≥ 4.5:1 en texto, ≥ 3:1 en bordes de control.
+- El botón de WhatsApp: texto `wa-texto` sobre `wa` = 7.6:1; filete `wa-borde`
+  sobre `papel` = 3.6:1. El glifo es decorativo: el botón ya tiene texto, así que va
+  con `aria-hidden="true"`.
 - `lang="es-MX"`.
 - HTML semántico y CSS con custom properties. **Nada de framework ni build step.**
 - Fuentes: Google Fonts con `preconnect` y `font-display: swap`, más fallback de
@@ -397,3 +524,7 @@ Regla del proyecto:
 | 5 | Sin sombras difusas, sin degradados | Es la señal más fiable de "generado por IA". |
 | 6 | Numeración solo en "Cómo funciona" | Los trámites no son una secuencia; numerarlos sería decoración. |
 | 7 | Copy en español de México, voz activa | El usuario tiene un problema real; la jerga lo expulsa. |
+| 8 | WhatsApp es el CTA principal, el formulario el secundario | El público objetivo escribe por WhatsApp; un formulario es una barrera de conversión. El formulario sigue ahí, pero no compite. |
+| 9 | `wa` es un color de canal, no parte de la paleta | El verde de WhatsApp ES el señalizador que dispara el clic. Va aislado en sus propios componentes para que signifique algo. |
+| 10 | Mensaje precargado por trámite | Quien pulsa "Permisos y licencias" ya dijo qué necesita. El chat empieza con la información, no con una pregunta. |
+| 11 | Barra fija móvil en vez de botón flotante en pantallas chicas | En móvil, un botón flotante encima de la barra de contenido es ruido. Uno u otro. |
