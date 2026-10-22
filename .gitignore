@@ -1,0 +1,7 @@
+.captura/
+node_modules/
+.DS_Store
+
+# Skill instalada con symlinks (se restaura con skills-lock.json)
+.agents/
+.claude/

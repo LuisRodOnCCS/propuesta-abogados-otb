@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bufete Rodea — Trámites y regularización en México desde Estados Unidos</title>
+  <meta name="description" content="Bufete de abogados que lleva trámites en México y la regularización de tu situación legal desde Estados Unidos. Costo y plazo por escrito antes de contratar.">
+  <meta name="theme-color" content="#16302A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Newsreader:opsz,wght@6..72,400..600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__inner">
+      <a class="marca" href="#inicio">
+        <span class="marca__nombre">Bufete Rodea</span>
+        <span class="marca__lugar">Monterrey, Nuevo León</span>
+      </a>
+
+      <button class="menu-boton" type="button" aria-expanded="false" aria-controls="nav-principal">
+        <span class="menu-boton__lineas" aria-hidden="true"></span>
+        <span class="visualmente-oculto">Abrir menú</span>
+      </button>
+
+      <nav class="nav" id="nav-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a href="#tramites">Trámites</a></li>
+          <li><a href="#proceso">Cómo funciona</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <a class="boton boton--solido boton--chico" href="#contacto">Agendar una consulta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============================ PORTADA ============================ -->
+    <section class="portada" id="inicio" aria-labelledby="portada-titulo">
+      <div class="contenedor portada__grid">
+
+        <div class="portada__cabecera">
+          <h1 class="titulo-portada" id="portada-titulo">
+            Regulariza tu situación en México<br>
+            <span class="titulo-portada__linea">desde Estados Unidos.</span>
+          </h1>
+        </div>
+
+        <div class="portada__texto">
+          <p class="entradilla">
+            Un solo despacho lleva tu expediente de los dos lados de la frontera:
+            los trámites que se hacen en México y los que necesitan tu firma allá.
+          </p>
+
+          <div class="portada__acciones">
+            <a class="boton boton--solido" href="#contacto">Agendar una consulta</a>
+            <a class="boton boton--linea" href="#tramites">Ver trámites</a>
+          </div>
+
+          <!-- PENDIENTE: validar la promesa de tiempo de respuesta con el despacho -->
+          <p class="portada__nota">
+            Un abogado revisa tu caso y te responde. No un formulario automático.
+          </p>
+        </div>
+
+        <!-- ============ EL SELLO: único elemento memorable del sitio ============ -->
+        <div class="portada__sello">
+          <svg class="sello" viewBox="0 0 340 210" role="img"
+               aria-label="Sello del despacho: trámites en México desde Estados Unidos">
+            <defs>
+              <filter id="tinta" x="-12%" y="-12%" width="124%" height="124%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="3" seed="11" result="ruido"/>
+                <feDisplacementMap in="SourceGraphic" in2="ruido" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
+            </defs>
+            <g filter="url(#tinta)">
+              <rect class="sello__marco" x="7" y="7" width="326" height="196"/>
+              <rect class="sello__marco sello__marco--fino" x="19" y="19" width="302" height="172"/>
+              <text class="sello__nombre" x="170" y="78" text-anchor="middle">BUFETE RODEA</text>
+              <line class="sello__linea" x1="46" y1="96" x2="294" y2="96"/>
+              <text class="sello__texto" x="170" y="130" text-anchor="middle">TRÁMITES EN MÉXICO</text>
+              <text class="sello__texto" x="170" y="158" text-anchor="middle">DESDE ESTADOS UNIDOS</text>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =================== FICHA + TRÁMITES =================== -->
+    <section class="seccion" id="tramites" aria-labelledby="tramites-titulo">
+      <div class="contenedor">
+        <h2 class="titulo-seccion" id="tramites-titulo">Trámites que resolvemos</h2>
+
+        <div class="bloque-servicio">
+
+          <!-- Riel de ficha: codifica datos reales, no decora -->
+          <aside class="ficha" aria-label="Ficha del servicio de ejemplo">
+            <dl class="ficha__lista">
+              <div class="ficha__fila">
+                <dt>Trámite</dt>
+                <dd>Apostille y legalización</dd>
+              </div>
+              <div class="ficha__fila">
+                <dt>Jurisdicción</dt>
+                <dd>México, cualquier estado</dd>
+              </div>
+              <div class="ficha__fila">
+                <dt>Plazo típico</dt>
+                <dd>3 a 5 semanas</dd>
+              </div>
+              <div class="ficha__fila">
+                <dt>Documentos</dt>
+                <dd>Pasaporte vigente y acta original con anotación</dd>
+              </div>
+            </dl>
+            <p class="ficha__pie">
+              Cada trámite cambia. Antes de cobrarte te escribimos el costo y el
+              plazo de <em>tu</em> caso por escrito.
+            </p>
+          </aside>
+
+          <div class="servicio">
+            <ul class="tramites">
+              <li class="tramite">
+                <div class="tramite__texto">
+                  <h3 class="tramite__titulo">Apostille y legalización</h3>
+                  <p class="tramite__desc">
+                    Para que un documento tuyo valga en México o en Estados Unidos.
+                    El trámite de autenticación que casi nadie sabe pedir bien.
+                  </p>
+                </div>
+                <p class="tramite__plazo">3 a 5 semanas</p>
+              </li>
+
+              <li class="tramite">
+                <div class="tramite__texto">
+                  <h3 class="tramite__titulo">Actas de nacimiento, matrimonio y defunción</h3>
+                  <p class="tramite__desc">
+                    Copia certificada si la tienes, o búsqueda en el registro civil
+                    donde naciste. Muchas actas se resuelven por correo.
+                  </p>
+                </div>
+                <p class="tramite__plazo">2 a 4 semanas</p>
+              </li>
+
+              <li class="tramite">
+                <div class="tramite__texto">
+                  <h3 class="tramite__titulo">CURP y constancias</h3>
+                  <p class="tramite__desc">
+                    Tus datos de identificación oficial, sin salir de tu casa.
+                    Es el trámite más rápido de todos y el que más se postpone.
+                  </p>
+                </div>
+                <p class="tramite__plazo">1 a 2 días</p>
+              </li>
+
+              <li class="tramite">
+                <div class="tramite__texto">
+                  <h3 class="tramite__titulo">Fe pública y juramentación</h3>
+                  <p class="tramite__desc">
+                    Para firmar un documento en México sin viajar. Se busca un
+                    notario en la ciudad que corresponde a tu expediente.
+                  </p>
+                </div>
+                <p class="tramite__plazo">3 a 6 semanas</p>
+              </li>
+
+              <li class="tramite">
+                <div class="tramite__texto">
+                  <h3 class="tramite__titulo">Permisos y licencias</h3>
+                  <p class="tramite__desc">
+                    Licencias de conducir, permisos de construcción, autorizaciones
+                    municipales. Los que dependen del estado y del municipio.
+                  </p>
+                </div>
+                <p class="tramite__plazo">4 a 8 semanas</p>
+              </li>
+
+              <li class="tramite">
+                <div class="tramite__texto">
+                  <h3 class="tramite__titulo">Representación ante consulados</h3>
+                  <p class="tramite__desc">
+                    Cuando el trámite lo tiene que hacer una persona autorizada en
+                    México y tú no puedes estar ahí.
+                  </p>
+                </div>
+                <p class="tramite__plazo">2 a 3 semanas</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= CÓMO FUNCIONA ========================= -->
+    <section class="seccion seccion--tinta" id="proceso" aria-labelledby="proceso-titulo">
+      <div class="contenedor">
+        <h2 class="titulo-seccion" id="proceso-titulo">Cómo funciona</h2>
+
+        <!-- Es una secuencia real, así que la numeración sí aporta información -->
+        <ol class="pasos">
+          <li class="paso">
+            <p class="paso__numero">1</p>
+            <h3 class="paso__titulo">Nos escribes y revisamos tu caso</h3>
+            <p class="paso__texto">
+              Nos cuentas qué necesitas y en qué estado está. En menos de 24 horas
+              hábiles te decimos si podemos ayudarte y qué documentos te faltan.
+            </p>
+          </li>
+          <li class="paso">
+            <p class="paso__numero">2</p>
+            <h3 class="paso__titulo">Armamos el expediente y lo enviamos</h3>
+            <p class="paso__texto">
+              Reunimos lo que falta, lo revisamos y lo presentamos ante la
+              autoridad o el consulado que corresponda.
+            </p>
+          </li>
+          <li class="paso">
+            <p class="paso__numero">3</p>
+            <h3 class="paso__titulo">Recibes el resultado y los documentos</h3>
+            <p class="paso__texto">
+              Te entregamos el documento final y cada comprobante, y te explicamos
+              qué sigue para que no se te venza nada.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========================== TESTIMONIOS ========================== -->
+    <section class="seccion seccion--salvia" aria-labelledby="testimonios-titulo">
+      <div class="contenedor">
+        <h2 class="titulo-seccion" id="testimonios-titulo">Lo que dicen</h2>
+
+        <!-- TESTIMONIO PENDIENTE: sustituir por textos reales y firmados por el despacho.
+             No publicar testimonios inventados. -->
+        <div class="testimonios">
+          <figure class="testimonio">
+            <blockquote class="testimonio__cita">
+             llevaba tres años intentando arreglar mi acta de nacimiento en
+              Monterrey sin pisar México. Me dijeron exactamente a qué registro
+              tenía que ir y lo resolvieron ellos.
+            </blockquote>
+            <figcaption class="testimonio__autor">
+              Nombre por confirmar, Houston
+            </figcaption>
+          </figure>
+
+          <figure class="testimonio">
+            <blockquote class="testimonio__cita">
+              Lo que más valoré fue que me dijeran la verdad: que mi caso necesitaba
+              un juicio y no un trámite. Sabía en qué estaba antes de pagar nada.
+            </blockquote>
+            <figcaption class="testimonio__autor">
+              Nombre por confirmar, Phoenix
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= PREGUNTAS FRECUENTES ======================= -->
+    <section class="seccion" id="preguntas" aria-labelledby="preguntas-titulo">
+      <div class="contenedor contenedor--estrecho">
+        <h2 class="titulo-seccion" id="preguntas-titulo">Preguntas frecuentes</h2>
+
+        <div class="faq">
+          <details class="faq__item">
+            <summary class="faq__pregunta">¿Necesito viajar a México para hacer estos trámites?</summary>
+            <div class="faq__respuesta">
+              <p>
+                La mayoría no. Hay casos en los que sí hace falta que viajes, por
+                ejemplo cuando se necesita tu firma presencial ante un notario, y te
+                lo decimos desde la primera llamada, con el costo aproximado del
+                viaje y de los días que tomarías.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__pregunta">¿Cuánto cuesta un trámite?</summary>
+            <div class="faq__respuesta">
+              <p>
+                Depende del trámite y del estado. Antes de cobrarte te enviamos un
+                desglose: honorarios, derechos oficiales, copias y envío. No hay
+                cargos por etapas ni honorarios que aparezcan al final.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__pregunta">¿Cuánto tarda?</summary>
+            <div class="faq__respuesta">
+              <p>
+                De 1 a 2 días en una constancia hasta 6 u 8 semanas en un permiso
+                estatal. El plazo real depende del estado, del municipio y de la
+                disponibilidad de la autoridad. Te lo confirmamos por escrito antes
+                de empezar.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__pregunta">¿Atienden en México y en Estados Unidos?</summary>
+            <div class="faq__respuesta">
+              <p>
+                Sí. Hay trámites que se hacen en México y hay pasos que requieren un
+                abogado en Estados Unidos. Cuando el caso lo pide, coordinamos a los
+                dos lados y te señalamos a un solo responsable.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__pregunta">¿Hablan inglés?</summary>
+            <div class="faq__respuesta">
+              <p>
+                La consulta se agenda en español. Si prefieres inglés, podemos
+                coordinarlo con un abogado que atienda en ese idioma, sin costo
+                adicional para ti.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__pregunta">¿Qué pasa si mi caso ya tiene un proceso abierto?</summary>
+            <div class="faq__respuesta">
+              <p>
+                Dilo desde el principio. Revisamos si hay una vía administrativa o si
+                lo que corresponde es un litigio, y te lo decimos con honestidad,
+                aunque no decidas contratar.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACTO ============================ -->
+    <section class="seccion seccion--salvia" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="contenedor">
+        <h2 class="titulo-seccion" id="contacto-titulo">Hablemos de tu caso</h2>
+
+        <div class="contacto">
+
+          <form class="formulario" id="form-consulta" novalidate>
+            <div class="campo">
+              <label class="campo__etiqueta" for="nombre">Nombre</label>
+              <input class="campo__control" type="text" id="nombre" name="nombre"
+                     autocomplete="name" required aria-describedby="error-nombre">
+              <p class="campo__error" id="error-nombre" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+              <label class="campo__etiqueta" for="correo">Correo electrónico</label>
+              <input class="campo__control" type="email" id="correo" name="correo"
+                     autocomplete="email" required aria-describedby="error-correo">
+              <p class="campo__error" id="error-correo" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+              <label class="campo__etiqueta" for="telefono">Teléfono <span class="campo__opcional">opcional</span></label>
+              <input class="campo__control" type="tel" id="telefono" name="telefono"
+                     autocomplete="tel" aria-describedby="error-telefono">
+              <p class="campo__error" id="error-telefono" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+              <label class="campo__etiqueta" for="estado">Dónde estás</label>
+              <select class="campo__control" id="estado" name="estado">
+                <option value="">Elige un estado</option>
+                <option>Arizona</option>
+                <option>California</option>
+                <option>Colorado</option>
+                <option>Florida</option>
+                <option>Georgia</option>
+                <option>Illinois</option>
+                <option>New Jersey</option>
+                <option>New York</option>
+                <option>Texas</option>
+                <option>Washington</option>
+                <option>Otro estado de Estados Unidos</option>
+                <option>Otro país</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label class="campo__etiqueta" for="tramite">Qué necesitas</label>
+              <select class="campo__control" id="tramite" name="tramite">
+                <option value="">Elige un trámite</option>
+                <option>Apostille y legalización</option>
+                <option>Actas y certificados del registro civil</option>
+                <option>CURP y constancias</option>
+                <option>Fe pública y juramentación</option>
+                <option>Permisos y licencias</option>
+                <option>Representación ante consulados</option>
+                <option>No sé todavía, quiero que me orienten</option>
+              </select>
+            </div>
+
+            <div class="campo campo--ancho">
+              <label class="campo__etiqueta" for="mensaje">Cuéntanos tu caso</label>
+              <textarea class="campo__control campo__control--area" id="mensaje" name="mensaje"
+                        rows="4" required aria-describedby="error-mensaje"
+                        placeholder="Qué necesitas hacer, desde cuándo, y si ya tienes algún proceso abierto."></textarea>
+              <p class="campo__error" id="error-mensaje" aria-live="polite"></p>
+            </div>
+
+            <div class="formulario__pie">
+              <button class="boton boton--solido" type="submit">Agendar una consulta</button>
+              <p class="formulario__aviso">
+                Al enviar este formulario no se crea una relación abogado-cliente.
+                La información es confidencial mientras revisamos tu caso.
+              </p>
+            </div>
+
+            <p class="formulario__exito" id="exito" role="status" hidden></p>
+          </form>
+
+          <div class="contacto__datos">
+            <h3 class="contacto__titulo">Oficina</h3>
+            <p class="contacto__linea">
+              Avenida [dirección por confirmar]<br>
+              Col. [colonia por confirmar], Monterrey, Nuevo León
+            </p>
+
+            <h3 class="contacto__titulo">Consultas</h3>
+            <p class="contacto__linea">
+              [correo por confirmar]<br>
+              [teléfono por confirmar]
+            </p>
+
+            <h3 class="contacto__titulo">Horario</h3>
+            <p class="contacto__linea">
+              Lunes a viernes, 9:00 a 18:00 (hora del centro)
+            </p>
+
+            <p class="contacto__aviso-legal">
+              La información de este sitio es general y no constituye asesoría
+              legal. Cada trámite tiene requisitos y plazos que dependen del estado
+              y de la autoridad competente. Antes de contratar te entregamos el
+              costo y el plazo por escrito.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__inner">
+      <p class="pie__marca">Bufete Rodea</p>
+      <p class="pie__legal">
+        Barra [número por confirmar]<br>
+        Contenido revisado: [fecha por confirmar]
+      </p>
+      <nav class="pie__enlaces" aria-label="Legal">
+        <a href="#">Aviso de privacidad</a>
+        <a href="#">Términos</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
